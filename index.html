@@ -8,14 +8,36 @@
     <link rel="stylesheet" href="style.css">
     <!-- <script src="main.js"></script> -->
 </head>
-<body>
+<body id="body">
 <div class="header">
-    <h1>Learning JavaScript</h1>
+    <h1 id="heading">Learning JavaScript</h1>
     <p>With Brad Traversy</p>
 </div>
-<div class="container">
 
-</div>
+<div class="container">
+    <form method="post" action="something.php" name="myForm">
+    <div>
+    <label>First Name</label>
+    <input type="text" name="firstName" id="firstName">
+    </div>
+    <br />
+    <div>
+        <label>Last Name</label>
+        <input type="text" name="lastName" id="lastName">
+    </div>
+    <br />
+    <div>
+        <label>Background</label>
+        <select name="background" id="background" onchange="changeBackground(this)">
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+        </select>
+    </div>
+    <br />
+    <input type="submit" value="Submit" />
+    </form>
+
 <script>
 // alert('Script Tags Work');
 // datatypes: Number, String, Array, Object
@@ -23,8 +45,8 @@
     // var number1 = 35;
     // var number2 = 40;
 // Now strings--it will concatenate to '3540' (when alert is number1 + number2)
-    var number1 = '35';
-    var number2 = '40';
+    // var number1 = '35';
+    // var number2 = '40';
     // alert('My favorite number is '+number1);
 
     // variables can containt:
@@ -32,10 +54,53 @@
     // begin with a letter, _, or $
     // case sensitive
 
-    var test = 'This is a test';
-    var Test = 'This is another test';
+    // var test = 'This is a test';
+    // var Test = 'This is another test';
 
-    alert(test);
+    // alert(test);
+
+    // // camel case
+    // var myFavoriteNumber
+
+    // // partial case
+    // var myFavoriteNumber
+
+    // // underscore
+    // var my_favorite_number
+
+// Array
+    // var colors = ['red', 'blue', 'green',];
+
+    // alert(colors);  shows all color names
+
+    // alert(colors[1]); shows 2nd item
+
+    // var colors = new Array('red', 'yellow', 'orange');
+
+    // reassign
+    // colors[3] = 'green';
+
+    // colors.push('purple');
+
+    // alert(colors[3]);
+
+    var numbers = [5,77,6,'Seven'];
+
+    // alert(numbers[0] + numbers[2]);
+
+    // property
+    // alert(numbers.length);
+
+    // function
+    // alert(numbers.sort());
+
+
+
+function changeBackground(x){
+    console.log(x.value);
+    var body = document.getElementById('body');
+    body.style.backgroundColor = x.value;
+}
 
 </script>
 
